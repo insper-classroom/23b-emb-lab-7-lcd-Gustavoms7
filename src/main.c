@@ -239,7 +239,7 @@ void lv_termostato(void){
 	//clock
 	static lv_obj_t * labelClock;
 	labelClock = lv_label_create(lv_scr_act());
-	lv_obj_align(labelClock, LV_ALIGN_LEFT_MID, 185 , -95);
+	lv_obj_align(labelClock, LV_ALIGN_LEFT_MID, 180 , -95);
 	lv_obj_set_style_text_font(labelClock, &dseg30, LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(labelClock, lv_color_white(), LV_STATE_DEFAULT);
 	lv_label_set_text_fmt(labelClock, "%s", "17:46");
@@ -304,7 +304,7 @@ void my_flush_cb(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * 
 }
 
 void my_input_read(lv_indev_drv_t * drv, lv_indev_data_t*data) {
-	int px, py, pressed;
+	int px, py;
 	
 	if (readPoint(&px, &py))
 		data->state = LV_INDEV_STATE_PRESSED;
@@ -326,7 +326,7 @@ void configure_lvgl(void) {
 	disp_drv.ver_res = LV_VER_RES_MAX;      /*Set the vertical resolution in pixels*/
 
 	lv_disp_t * disp;
-	disp = lv_disp_drv_register(&disp_drv); /*Register the driver and save the created display objects*/
+	lv_disp_drv_register(&disp_drv); /*Register the driver and save the created display objects*/
 	
 	/* Init input on LVGL */
 	lv_indev_drv_init(&indev_drv);
