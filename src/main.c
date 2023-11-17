@@ -93,9 +93,10 @@ static void clk_handler(lv_event_t * e) {
 
 static void up_handler(lv_event_t * e) {
 	lv_event_code_t code = lv_event_get_code(e);
-	char *c;
-	int temp;
+	
 	if(code == LV_EVENT_CLICKED) {
+		char *c;
+		int temp;
 		c = lv_label_get_text(labelSetValue);
 		temp = atoi(c);
 		lv_label_set_text_fmt(labelSetValue, "%02d", temp + 1);
@@ -104,9 +105,10 @@ static void up_handler(lv_event_t * e) {
 
 static void down_handler(lv_event_t * e) {
 	lv_event_code_t code = lv_event_get_code(e);
-	char *c;
-	int temp;
+	
 	if(code == LV_EVENT_CLICKED) {
+		char *c;
+		int temp;
 		c = lv_label_get_text(labelSetValue);
 		temp = atoi(c);
 		lv_label_set_text_fmt(labelSetValue, "%02d", temp - 1);
@@ -237,7 +239,7 @@ void lv_termostato(void){
 	//clock
 	static lv_obj_t * labelClock;
 	labelClock = lv_label_create(lv_scr_act());
-	lv_obj_align(labelClock, LV_ALIGN_LEFT_MID, 210 , -95);
+	lv_obj_align(labelClock, LV_ALIGN_LEFT_MID, 185 , -95);
 	lv_obj_set_style_text_font(labelClock, &dseg30, LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(labelClock, lv_color_white(), LV_STATE_DEFAULT);
 	lv_label_set_text_fmt(labelClock, "%s", "17:46");
