@@ -247,7 +247,7 @@ void lv_termostato(void){
 	
 
 static void task_lcd(void *pvParameters) {
-	int px, py;
+	//int px, py;
 
 	lv_termostato();
 
